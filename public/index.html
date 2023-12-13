@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Belajar Tailwind</title>
+    <style type="text/css"></style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            spacing: {
+              13: "3.25rem",
+            },
+            fontFamily: {
+              inter: ["Inter"],
+            },
+            screens: {
+              sm: { max: "400px" },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-100">
+    <!-- Navigasi -->
+    <!-- Navbar -->
+    <nav class="bg-pink-500 p-4 text-blue-700 fixed top-0 left-0 right-0 z-40">
+      <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-2xl screens:sm:text-black font-semibold">
+          Toko Kosmetik
+        </h1>
+        <button id="toggleNav" class="md:hidden text-white focus:outline-none">
+          <svg
+            class="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+
+        <ul
+          id="navList"
+          class="hidden md:flex flex-col md:flex-row md:items-center gap-8 mr-16"
+        >
+          <li
+            class="transition duration-300 ease-in-out transform hover:scale-105 hover:bg-white hover:rounded-md hover:text-black p-2"
+          >
+            <a href="#beranda" class="py-2 md:py-0">Beranda</a>
+          </li>
+          <li
+            class="transition duration-300 ease-in-out transform hover:scale-105 hover:bg-white hover:rounded-md hover:text-black p-2"
+          >
+            <a href="#produk" class="py-2 md:py-0">Produk</a>
+          </li>
+          <li
+            class="transition duration-300 ease-in-out transform hover:scale-105 hover:bg-white hover:rounded-md hover:text-black p-2"
+          >
+            <a href="#feedback" class="py-2 md:py-0">Feedback</a>
+          </li>
+          <li
+            class="transition duration-300 ease-in-out transform hover:scale-105 hover:bg-white hover:rounded-md hover:text-black p-2"
+          >
+            <a href="#" class="py-2 md:py-0">Kontak</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="sm:mt-16"></div>
+    <header
+      class="bg-gray-200 p-8 sm:p-14 text-center mt-20 md:mt-0 mb-8 sm:mb-40"
+      id="beranda"
+    >
+      <h2 class="text-4xl font-semibold">Selamat Datang di Toko Kosmetik</h2>
+      <p class="mt-4 text-lg">Temukan produk kecantikan terbaik untuk Anda</p>
+    </header>
+
+    <!-- Produk Terbaru -->
+    <section class="container mx-auto mt-8" id="produk">
+      <h3 class="text-2xl font-semibold mb-4 ml-4">Produk Terbaru</h3>
+
+      <div
+        id="produkContainer"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 m-4"
+      >
+        <!-- Produk 1 -->
+        <div
+          class="bg-white p-4 rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105"
+        >
+          <img
+            src="gambar_produk1.jpg"
+            alt="Produk 1"
+            class="w-full h-32 object-cover mb-4"
+          />
+          <h4 class="text-lg font-semibold">Nama Produk 1</h4>
+          <p class="text-gray-600">Deskripsi singkat produk 1.</p>
+          <span class="text-purple-500 font-bold mt-2">$20.00</span>
+          <button
+            onclick="beliProduk()"
+            class="mt-4 ml-4 bg-purple-500 text-white px-4 py-2 rounded transform transition-transform duration-300 hover:scale-105"
+          >
+            Beli Sekarang
+          </button>
+        </div>
+
+        <!-- Produk 2 (sama seperti produk 1) -->
+        <div
+          class="bg-white p-4 rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105"
+        >
+          <img
+            src="gambar_produk1.jpg"
+            alt="Produk 1"
+            class="w-full h-32 object-cover mb-4"
+          />
+          <h4 class="text-lg font-semibold">Nama Produk 1</h4>
+          <p class="text-gray-600">Deskripsi singkat produk 1.</p>
+          <span class="text-purple-500 font-bold mt-2">$20.00</span>
+          <button
+            onclick="beliProduk()"
+            class="mt-4 ml-4 bg-purple-500 text-white px-4 py-2 rounded transform transition-transform duration-300 hover:scale-105"
+          >
+            Beli Sekarang
+          </button>
+        </div>
+        <!-- Produk 3 (sama seperti produk 1) -->
+        <div
+          class="bg-white p-4 rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105"
+        >
+          <img
+            src="gambar_produk1.jpg"
+            alt="Produk 1"
+            class="w-full h-32 object-cover mb-4"
+          />
+          <h4 class="text-lg font-semibold">Nama Produk 1</h4>
+          <p class="text-gray-600">Deskripsi singkat produk 1.</p>
+          <span class="text-purple-500 font-bold mt-2">$20.00</span>
+          <button
+            onclick="beliProduk()"
+            class="mt-4 ml-4 bg-purple-500 text-white px-4 py-2 rounded transform transition-transform duration-300 hover:scale-105"
+          >
+            Beli Sekarang
+          </button>
+        </div>
+        <!-- ... dan seterusnya -->
+        <div
+          class="bg-white p-4 rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105"
+        >
+          <img
+            src="gambar_produk1.jpg"
+            alt="Produk 1"
+            class="w-full h-32 object-cover mb-4"
+          />
+          <h4 class="text-lg font-semibold">Nama Produk 1</h4>
+          <p class="text-gray-600">Deskripsi singkat produk 1.</p>
+          <span class="text-purple-500 font-bold mt-2">$20.00</span>
+          <button
+            onclick="beliProduk()"
+            class="mt-4 ml-4 bg-purple-500 text-white px-4 py-2 rounded transform transition-transform duration-300 hover:scale-105"
+          >
+            Beli Sekarang
+          </button>
+        </div>
+        <div
+          class="bg-white p-4 rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105"
+        >
+          <img
+            src="gambar_produk1.jpg"
+            alt="Produk 1"
+            class="w-full h-32 object-cover mb-4"
+          />
+          <h4 class="text-lg font-semibold">Nama Produk 1</h4>
+          <p class="text-gray-600">Deskripsi singkat produk 1.</p>
+          <span class="text-purple-500 font-bold mt-2">$20.00</span>
+          <button
+            onclick="beliProduk()"
+            class="mt-4 ml-4 bg-purple-500 text-white px-4 py-2 rounded transform transition-transform duration-300 hover:scale-105"
+          >
+            Beli Sekarang
+          </button>
+        </div>
+        <div
+          class="bg-white p-4 rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105"
+        >
+          <img
+            src="gambar_produk1.jpg"
+            alt="Produk 1"
+            class="w-full h-32 object-cover mb-4"
+          />
+          <h4 class="text-lg font-semibold">Nama Produk 1</h4>
+          <p class="text-gray-600">Deskripsi singkat produk 1.</p>
+          <span class="text-purple-500 font-bold mt-2">$20.00</span>
+          <button
+            onclick="beliProduk()"
+            class="mt-4 ml-4 bg-purple-500 text-white px-4 py-2 rounded transform transition-transform duration-300 hover:scale-105"
+          >
+            Beli Sekarang
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div
+        class="flex flex-col items-center justify-center h-screen light"
+        id="feedback"
+      >
+        <div class="w-full max-w-md bg-white rounded-lg shadow-md p-6">
+          <h2 class="text-2xl text-center font-bold text-gray-800 mb-4">
+            Product Feedback Form
+          </h2>
+
+          <form class="flex flex-col">
+            <input
+              placeholder="Full Name"
+              class="bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+              type="text"
+            />
+            <input
+              placeholder="Email"
+              class="bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+              type="email"
+            />
+            <select
+              class="bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+              id="product"
+            >
+              <option value="product-1">Product 1</option>
+              <option value="product-2">Product 2</option>
+              <option value="product-3">Product 3</option>
+            </select>
+            <input
+              placeholder="Rating (1-5)"
+              class="bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+              type="number"
+            />
+            <textarea
+              placeholder="Feedback"
+              class="bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+              name="feedback"
+            ></textarea>
+
+            <button
+              class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-bold py-2 px-4 rounded-md mt-4 hover:bg-indigo-600 hover:to-blue-600 transition ease-in-out duration-150"
+              type="submit"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="container mx-auto text-center bg-pink-500 p-4 text-white">
+        <p>&copy; 2023 Toko Kosmetik. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      function beliProduk() {
+        Swal.fire({
+          icon: "success",
+          title: "Pembelian Berhasil!",
+          text: "Terima kasih atas pembelian Anda!",
+          confirmButtonColor: "#4CAF50",
+          confirmButtonText: "OK",
+        });
+      }
+
+      document
+        .getElementById("toggleNav")
+        .addEventListener("click", function () {
+          document.getElementById("navList").classList.toggle("hidden");
+        });
+    </script>
+  </body>
+</html>
