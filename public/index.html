@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth focus:scroll-auto">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -36,9 +36,19 @@
     <!-- Navigasi -->
     <!-- Navbar -->
     <nav class="bg-pink-500 p-4 text-white fixed top-0 left-0 right-0 z-40">
-      <div class="container mx-auto flex justify-between items-center">
-        <h1 class="text-xl sm:text-2xl font-semibold">Toko Kosmetik</h1>
-        <button id="toggleNav" class="md:hidden text-white focus:outline-none">
+      <div
+        class="container mx-auto flex flex-col md:flex-row justify-between items-center"
+      >
+        <div class="flex items-end">
+          <h1 class="text-xl sm:text-2xl font-semibold md:mb-0">
+            Toko Kosmetik
+          </h1>
+        </div>
+
+        <button
+          id="toggleNav"
+          class="md:hidden text-white focus:outline-none ml-auto -mt-6"
+        >
           <svg
             class="h-6 w-6"
             fill="none"
@@ -57,25 +67,25 @@
 
         <ul
           id="navList"
-          class="hidden md:flex flex-col md:flex-row md:items-center gap-8 mr-4 sm:mr-16 md:mr-16"
+          class="hidden md:flex flex-col md:flex-row gap-8 mt-4 md:mt-0"
         >
           <li
-            class="transition duration-300 ease-in-out transform hover:scale-105 hover:bg-white hover:rounded-md hover:text-black p-2"
+            class="transition duration-300 ease-in-out transform hover:scale-105 hover:bg-purple-600 hover:rounded-md hover:text-white p-2"
           >
             <a href="#beranda" class="py-2 md:py-0">Beranda</a>
           </li>
           <li
-            class="transition duration-300 ease-in-out transform hover:scale-105 hover:bg-white hover:rounded-md hover:text-black p-2"
+            class="transition duration-300 ease-in-out transform hover:scale-105 hover:bg-purple-600 hover:rounded-md hover:text-white p-2"
           >
             <a href="#produk" class="py-2 md:py-0">Produk</a>
           </li>
           <li
-            class="transition duration-300 ease-in-out transform hover:scale-105 hover:bg-white hover:rounded-md hover:text-black p-2"
+            class="transition duration-300 ease-in-out transform hover:scale-105 hover:bg-purple-600 hover:rounded-md hover:text-white p-2"
           >
             <a href="#feedback" class="py-2 md:py-0">Feedback</a>
           </li>
           <li
-            class="transition duration-300 ease-in-out transform hover:scale-105 hover:bg-white hover:rounded-md hover:text-black p-2"
+            class="transition duration-300 ease-in-out transform hover:scale-105 hover:bg-purple-600 hover:rounded-md hover:text-white p-2"
           >
             <a href="#" class="py-2 md:py-0">Kontak</a>
           </li>
