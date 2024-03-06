@@ -544,12 +544,6 @@ video {
   width: 100%;
 }
 
-@media (min-width: 640px) {
-  .container {
-    max-width: 640px;
-  }
-}
-
 @media (min-width: 768px) {
   .container {
     max-width: 768px;
@@ -710,6 +704,11 @@ video {
   margin-right: auto;
 }
 
+.my-28 {
+  margin-top: 7rem;
+  margin-bottom: 7rem;
+}
+
 .-mt-6 {
   margin-top: -1.5rem;
 }
@@ -853,16 +852,8 @@ video {
   height: 1.5rem;
 }
 
-.h-screen {
-  height: 100vh;
-}
-
 .w-6 {
   width: 1.5rem;
-}
-
-.w-80 {
-  width: 20rem;
 }
 
 .w-\[this-is\\\\\] {
@@ -1866,6 +1857,16 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-blue-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+}
+
+.bg-red-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
+}
+
 .bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
@@ -2200,11 +2201,6 @@ video {
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
-.text-amber-300 {
-  --tw-text-opacity: 1;
-  color: rgb(252 211 77 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -2544,15 +2540,9 @@ video {
   content: var(--tw-content);
 }
 
-@media (min-width: 640px) {
+@media (max-width: 400px) {
   .sm\:container {
     width: 100%;
-  }
-
-  @media (min-width: 640px) {
-    .sm\:container {
-      max-width: 640px;
-    }
   }
 
   @media (min-width: 768px) {
@@ -2656,7 +2646,7 @@ video {
   text-align: center;
 }
 
-@media (min-width: 640px) {
+@media (max-width: 400px) {
   .sm\:mb-40 {
     margin-bottom: 10rem;
   }
@@ -2684,6 +2674,11 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .md\:mb-0 {
     margin-bottom: 0px;
   }
@@ -2700,8 +2695,8 @@ video {
     display: none;
   }
 
-  .md\:w-full {
-    width: 100%;
+  .md\:w-2\/3 {
+    width: 66.666667%;
   }
 
   .md\:flex-row {
@@ -2715,12 +2710,48 @@ video {
 }
 
 @media (min-width: 1024px) {
+  .lg\:m-4 {
+    margin: 1rem;
+  }
+
+  .lg\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .lg\:mx-4 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .lg\:mx-2 {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .lg\:mt-32 {
+    margin-top: 8rem;
+  }
+
   .lg\:h-64 {
     height: 16rem;
   }
 
+  .lg\:w-2\/4 {
+    width: 50%;
+  }
+
+  .lg\:w-full {
+    width: 100%;
+  }
+
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
